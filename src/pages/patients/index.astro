@@ -1,0 +1,10 @@
+---
+import { Debug } from "astro/components";
+
+const response = await fetch(`https://www.seikoya.com/api/getposts/?custom_post=patient&perpage=999999`, {method: 'GET'});
+const data = await response.json();
+const patients = data.result[0];
+
+console.log(data)
+
+---
