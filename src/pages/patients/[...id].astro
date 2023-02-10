@@ -1,5 +1,8 @@
 ---
 const { id } = Astro.params;
+const response = await fetch(`https://seikoya.com/api/getpost?custom_post=patient&post_id=${id}&perpage=1`);
+const data = await response.json();
+const patient = data.result[0];
 ---
 
-<h1>{id}</h1>
+<h1>{patient}</h1>
